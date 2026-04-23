@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Mis Proyectos - Portafolio
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center mb-5">Proyectos de Ingeniería</h1>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="{% static 'img/proyecto2.jpeg' %}" class="card-img-top" alt="Logo Virtual Tour">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Virtual Tour</h5>
+                    <p class="card-text">
+                        Plataforma de realidad virtual desarrollada con Meta Quest 
+                        para la capacitación en el cultivo de ostión. 
+                        Permite explorar entornos acuícolas de manera inmersiva.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="{% static 'img/proyecto1.jpeg' %}" class="card-img-top" alt=" Logo ResQNote">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">ResQNote</h5>
+                    <p class="card-text">
+                        Sistema de registro clínico pre-hospitalario para paramédicos. Implementa protocolos 
+                        FRAP, Glasgow y XABCDE para optimizar la atención de emergencias.
+                    </p>
+                    <span class="badge bg-success">Software Médico</span>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

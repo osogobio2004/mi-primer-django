@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Multimedia
+{% endblock %}
+
+{% block content %}
+    <h1>Galería Multimedia</h1>
+    
+    <div class="mb-5">
+        <h3>Audio Destacado</h3>
+        <p>Escucha nuestra pista favorita para programar:</p>
+        <audio controls>
+            <source src="{% static 'audio/banana shake.mp3' %}" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <hr>
+    
+    <div class="mt-5">
+        <h3>Video Recomendado</h3>
+        <p>Visualizer de la pista destacada:</p>
+        
+        <div class="ratio ratio-16x9">
+            <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/BdnzgA0VLfE?si=NQFEiGx9-shrol2x" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+            picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        </div>
+    </div>
+
+{% endblock %}

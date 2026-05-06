@@ -1,0 +1,15 @@
+{% block title %}Detalle del Estudiante{% endblock %}
+
+{% block content %}
+<h2>Detalle del Estudiante</h2>
+<p><strong>Nombre:</strong> {{ estudiante.nombre }} {{ estudiante.appat }} {{ estudiante.apmat }}</p>
+<p><strong>Matrícula:</strong> {{ estudiante.matricula }}</p>
+<p><strong>CURP:</strong> {{ estudiante.curp }}</p>
+<p><strong>Carrera:</strong> {{ estudiante.carrera.nombre }}</p>
+<p><strong>Modalidad:</strong> {{ estudiante.carrera.modalidad }}</p>
+
+<img src="../{{estudiante.fotografia}}" width="20%">
+
+<a href="{% url 'editar_estudiante' estudiante.id %}">Editar</a>
+<a href="{% url 'lista_estudiantes' %}">Volver</a>
+{% endblock %}

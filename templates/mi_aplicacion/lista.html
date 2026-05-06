@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{%block title %}Lista{% endblock title %}
+
+    {% block content %}
+    <h1>Mi lista</h1>
+<ul>
+    {% for items in lista %}
+    <li>{{ items }}</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

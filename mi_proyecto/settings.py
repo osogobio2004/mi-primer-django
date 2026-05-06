@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mi_aplicacion',
 ]
 
 MIDDLEWARE = [
@@ -81,6 +82,9 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '3306',
+        'OPTIONS': {
+    'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+},
     }
 }
 
@@ -124,3 +128,5 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #Directorio para archivos estáticos
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

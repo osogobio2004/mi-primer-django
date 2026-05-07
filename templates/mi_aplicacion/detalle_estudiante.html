@@ -1,15 +1,38 @@
-{% block title %}Detalle del Estudiante{% endblock %}
+{% extends "base.html" %}
+
+{% block title %}Detalle de {{ estudiante.nombre }}{% endblock %}
 
 {% block content %}
-<h2>Detalle del Estudiante</h2>
-<p><strong>Nombre:</strong> {{ estudiante.nombre }} {{ estudiante.appat }} {{ estudiante.apmat }}</p>
-<p><strong>Matrícula:</strong> {{ estudiante.matricula }}</p>
-<p><strong>CURP:</strong> {{ estudiante.curp }}</p>
-<p><strong>Carrera:</strong> {{ estudiante.carrera.nombre }}</p>
-<p><strong>Modalidad:</strong> {{ estudiante.carrera.modalidad }}</p>
+<div class="card">
+    <div class="card-header titulo-menu">
+        Información del Estudiante
+    </div>
+    <div class="card-body p-4">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                {% if estudiante.fotografia %}
+                    <img src="{{ estudiante.fotografia.url }}" class="img-fluid rounded-circle border border-3 shadow-sm" style="max-width: 180px; border-color: var(--color-costura) !important;">
+                {% else %}
+                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 150px; height: 150px; border: 2px dashed var(--color-costura);">
+                        <span class="text-muted">Sin foto</span>
+                    </div>
+                {% endif %}
+            </div>
 
-<img src="../{{estudiante.fotografia}}" width="20%">
+            <div class="col-md-8">
+                <h3 class="mb-3">{{ estudiante.nombre }} {{ estudiante.appat }} {{ estudiante.apmat }}</h3>
+                <p class="mb-2"><strong> Matrícula:</strong> {{ estudiante.matricula }}</p>
+                <p class="mb-2"><strong> CURP:</strong> <span class="text-uppercase">{{ estudiante.curp }}</span></p>
+                <hr class="opacity-25" style="border-top: 1px dashed var(--color-chocolate);">
+                <p class="mb-2"><strong> Carrera:</strong> {{ estudiante.carrera.nombre }}</p>
+                <p class="mb-0"><strong> Modalidad:</strong> {{ estudiante.carrera.modalidad }}</p>
+            </div>
+        </div>
 
-<a href="{% url 'editar_estudiante' estudiante.id %}">Editar</a>
-<a href="{% url 'lista_estudiantes' %}">Volver</a>
+        <div class="mt-5 text-center">
+            <a href="{% url 'editar_estudiante' estudiante.id %}" class="btn me-2">Editar Información</a>
+            <a href="{% url 'lista_estudiantes' %}" class="btn" style="background-color: var(--color-hover);">Volver a la Lista</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

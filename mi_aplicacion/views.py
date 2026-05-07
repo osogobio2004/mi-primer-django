@@ -9,7 +9,7 @@ class Lista(ListView):
     queryset = ['Elemento 1', 'Elemento 2']
     context_object_name = 'lista'
 
-    class lista(ListView):
+class lista(ListView):
     template_name = 'mi_aplicacion/lista.html'
     queryset = ['elemento 1', 'elemento 2']
     context_object_name = 'lista'

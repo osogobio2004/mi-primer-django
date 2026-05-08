@@ -20,8 +20,9 @@
             <td>{{ estudiante.appat }}</td>
             <td>{{ estudiante.apmat }}</td>
             <td>
-                <a href="{% url 'detalle_estudiante' estudiante.id %}">Ver Detalle</a> |
-                <a href="{% url 'eliminar_estudiante' estudiante.id %}">Eliminar</a>
+            <a href="{% url 'detalle_estudiante' estudiante.id %}" class="btn" style="padding: 4px 12px; font-size: 0.85rem; margin-right: 5px;">✿ Ver</a>    
+            <a href="{% url 'editar_estudiante' estudiante.id %}" class="btn" style="background-color: var(--color-hover); padding: 4px 12px; font-size: 0.85rem; margin-right: 5px;">✎ Editar</a>
+            <a href="{% url 'eliminar_estudiante' estudiante.id %}" class="btn" style="background-color: #E5A9A9; padding: 4px 12px; font-size: 0.85rem;">✖ Eliminar</a>
             </td>
         </tr>
         {% empty %}
